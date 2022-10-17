@@ -3,8 +3,8 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import {
   MediaRenderer,
-  useActiveListings,
   useContract,
+  useListings,
 } from "@thirdweb-dev/react";
 import { useRouter } from "next/router";
 import { Marketplace } from "@thirdweb-dev/sdk";
@@ -19,8 +19,7 @@ const Home: NextPage = () => {
   );
 
   const { data: listings, isLoading: loadingListings } =
-    useActiveListings(marketplace);
-
+    useListings(marketplace);
   return (
     <>
       {/* Content */}
